@@ -71,7 +71,7 @@ st.title("HỆ THỐNG CẢNH BÁO SỚM RỦI RO TÀI CHÍNH DOANH NGHIỆP")
 @st.cache_data
 def load_data():
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    file_path = os.path.join(base_dir, "Ket_qua_du_bao.csv")
+    file_path = os.path.join(base_dir, "ket_qua_du_bao.csv")
     df = pd.read_csv(file_path)
     df["nam"] = df["nam"].astype(int)
     df = df[(df["nam"] >= 2019) & (df["nam"] <= 2024)]
@@ -174,7 +174,14 @@ if page == "📊 Tổng quan hệ thống":
     st.plotly_chart(fig, use_container_width=True)
 
     st.markdown('</div>', unsafe_allow_html=True)
-    
+
+    st.caption("""
+    **Thang điểm Risk Score (0–100):**
+    - 0–40: Doanh nghiệp an toàn
+    - 40–70: Doanh nghiệp cần cảnh báo
+    - 70–100: Doanh nghiệp có nguy cơ cao
+    """)
+
 
 # =====================================================
 # 🌍 TRANG 2 – TOÀN CẢNH THỊ TRƯỜNG
@@ -672,8 +679,6 @@ elif page == "🚨 Cảnh báo & So sánh":
         })
 
         st.dataframe(table_df.round(2), use_container_width=True)
-
-
 
 
 
