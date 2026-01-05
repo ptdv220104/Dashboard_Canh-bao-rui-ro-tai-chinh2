@@ -102,7 +102,7 @@ if page == "📊 Tổng quan hệ thống":
     st.header("Tổng quan hệ thống")
 
     st.markdown("""
-    **Hệ thống cảnh báo sớm rủi ro tài chính cho doanh nghiệp phi tài chính niêm yết tại Việt Nam**
+    **Hệ thống cảnh báo sớm rủi ro tài chính cho doanh nghiệp phi tài chính niêm yết tại Việt Nam giai đoạn 2019-2024**
     được xây dựng dựa trên dữ liệu báo cáo tài chính và kết quả từ các mô hình Machine Learning.
     Hệ thống tập trung vào theo dõi **xu hướng rủi ro**, **so sánh động theo thời gian**
     và **phân tích đa cấp độ** từ thị trường, ngành đến từng doanh nghiệp.
@@ -174,6 +174,7 @@ if page == "📊 Tổng quan hệ thống":
     st.plotly_chart(fig, use_container_width=True)
 
     st.markdown('</div>', unsafe_allow_html=True)
+    
 
 # =====================================================
 # 🌍 TRANG 2 – TOÀN CẢNH THỊ TRƯỜNG
@@ -671,6 +672,7 @@ elif page == "🚨 Cảnh báo & So sánh":
         })
 
         st.dataframe(table_df.round(2), use_container_width=True)
+
 
 
 
